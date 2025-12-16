@@ -1,15 +1,14 @@
-# config/constants.py
-
-# CSS Constants
+# config/constants.py - RESPONSIBLE AI EDUCATOR VERSION
+# CSS Constants (Updated colors: purple theme for AI ethics)
 CUSTOM_CSS = """
 <style>
     .main-header {
         font-size: 2.8rem;
-        color: #2E7D32;
+        color: #5E35B1;  /* Changed from green to purple */
         text-align: center;
         margin-bottom: 1rem;
         font-weight: 800;
-        background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 100%);
+        background: linear-gradient(135deg, #5E35B1 0%, #8E24AA 100%);  /* Purple gradient */
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -27,13 +26,13 @@ CUSTOM_CSS = """
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     .platform-card.linkedin {
-        border-left: 5px solid #0A66C2;
+        border-left: 5px solid #0A66C2;  /* Keep LinkedIn blue */
     }
     .platform-card.facebook {
-        border-left: 5px solid #1877F2;
+        border-left: 5px solid #1877F2;  /* Keep Facebook blue */
     }
     .platform-card.whatsapp {
-        border-left: 5px solid #25D366;
+        border-left: 5px solid #25D366;  /* Keep WhatsApp green */
     }
     .platform-header {
         display: flex;
@@ -68,7 +67,7 @@ CUSTOM_CSS = """
         overflow-y: auto;
     }
     .copy-btn {
-        background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 100%);
+        background: linear-gradient(135deg, #5E35B1 0%, #8E24AA 100%);  /* Purple gradient */
         color: white;
         border: none;
         padding: 0.6rem 1.2rem;
@@ -80,13 +79,13 @@ CUSTOM_CSS = """
     }
     .copy-btn:hover {
         transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+        box-shadow: 0 4px 12px rgba(94, 53, 177, 0.3);  /* Purple shadow */
     }
     .success-box {
-        background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);  /* Light purple */
         padding: 1rem;
         border-radius: 10px;
-        border-left: 5px solid #4CAF50;
+        border-left: 5px solid #8E24AA;  /* Purple border */
         margin: 1rem 0;
     }
     .agent-pill {
@@ -102,193 +101,204 @@ CUSTOM_CSS = """
 </style>
 """
 
-# Example Topics
+# Example Topics for AI Ethics Education
 EXAMPLE_TOPICS = [
-    "🤖 AI for Nigerian smallholder farmers",
-    "🌾 Smart irrigation with IoT sensors",
-    "📱 Mobile apps for crop disease detection",
-    "🚜 Agricultural drones in West Africa",
-    "💧 Water conservation in arid regions",
-    "📈 Yield prediction with machine learning"
+    "🤖 Algorithmic bias in hiring tools",
+    "⚖️ The EU AI Act explained simply", 
+    "👁️ AI transparency: Why 'black boxes' are a problem",
+    "🌍 Global perspectives on AI ethics",
+    "🏥 Ethical AI in healthcare decisions",
+    "📚 Teaching AI ethics to developers",
+    "🔍 Facial recognition and privacy concerns",
+    "🎯 How to spot biased AI in everyday life",
+    "🤝 AI accountability: Who's responsible when AI fails?",
+    "💼 Ethical AI for small businesses"
 ]
 
-# Agent Instructions
-RESEARCH_AGENT_INSTRUCTION = """You are an agriculture technology research specialist. When given a topic:
+# Agent Instructions for Responsible AI Education
+RESEARCH_AGENT_INSTRUCTION = """You are an AI ethics research specialist focused on public education. When given a topic:
 
 1. Search for recent, credible information (last 1-2 years)
-2. Focus on practical applications for farmers
-3. Include statistics and real-world examples
-4. Cover challenges and future trends
+2. Focus on EXPLAINING COMPLEX CONCEPTS IN SIMPLE TERMS
+3. Include real-world examples that everyday people can understand
+4. Cover both problems AND practical solutions
 5. MUST store findings with: context.state['research_findings'] = [your research text here]
 
-RESEARCH FORMAT:
+RESEARCH FORMAT (USE PLAIN ENGLISH):
 TOPIC: [Topic Name]
 
-KEY FINDINGS:
-1. [Finding 1 with statistic/example]
-2. [Finding 2 with statistic/example]
+KEY CONCEPTS EXPLAINED SIMPLY:
+1. [Concept 1 explained like you're talking to a friend]
+2. [Concept 2 with everyday analogy]
 
-PRACTICAL APPLICATIONS:
-- [Application 1 - how farmers can use this]
-- [Application 2 - specific tools/technologies]
+REAL-WORLD EXAMPLES (NON-TECHNICAL):
+- [Example 1: Situation people might encounter]
+- [Example 2: How this affects ordinary people]
 
-IMPACT & STATISTICS:
-- [Key statistic 1]
-- [Key statistic 2]
+STATISTICS & IMPACT:
+- [Statistic 1 - explain what it means simply]
+- [Statistic 2 - why it matters to regular folks]
 
-CHALLENGES & SOLUTIONS:
-- [Challenge with potential solution]
+COMMON MISCONCEPTIONS:
+- [Myth 1 and the truth]
+- [Myth 2 and the truth]
 
-FUTURE TRENDS:
-- [Trend 1]
-- [Trend 2]
+PRACTICAL ADVICE:
+- [How to recognize ethical/unethical AI]
+- [What people can do about it]
 
 Remember to store with: context.state['research_findings'] = """
 
-LINKEDIN_AGENT_INSTRUCTION = """You are a LinkedIn content writer specializing in agriculture technology. Read context.state['research_findings'] and create a professional LinkedIn article.
+LINKEDIN_AGENT_INSTRUCTION = """You are a LinkedIn content writer specializing in AI ETHICS EDUCATION. Read context.state['research_findings'] and create a professional but accessible LinkedIn article.
 
-CRITICAL: Only use information from context.state['research_findings']. No external knowledge.
+CRITICAL: Only use information from context.state['research_findings']. Explain complex topics in SIMPLE LANGUAGE.
 
-PROFESSIONAL LINKEDIN POST STRUCTURE:
+PROFESSIONAL LINKEDIN POST STRUCTURE FOR AI ETHICS:
 
-1. **HEADLINE**: [1 Strategic Emoji] + [Impact/Result] + [Technology] + [Agriculture Context] 
+1. **HEADLINE**: [1 Strategic Emoji] + [Clear Benefit] + [Ethics Concept] + [Real-World Context]
+   Example: "🤖 Why AI Bias Matters in Your Job Search"
 
-2. **HOOK**: Start with surprising statistic/urgent problem/counter-intuitive fact from research
+2. **HOOK**: Start with relatable scenario or surprising fact from research
+   Example: "Have you ever wondered why some job applicants never get callbacks?"
 
-3. **BODY** (3-4 concise paragraphs):
-   - Paragraph 1: Current challenge + Why it matters to agriculture
-   - Paragraph 2: How [Technology] provides the solution (use simple explanations)
-   - Paragraph 3: Tangible results/statistics from implementation
-   - Paragraph 4: Broader implications for the industry and Farmers
+3. **BODY** (3-4 concise paragraphs in PLAIN ENGLISH):
+   - Paragraph 1: Explain the ETHICS CONCEPT simply (like teaching a friend)
+   - Paragraph 2: REAL-WORLD EXAMPLE everyone can understand
+   - Paragraph 3: PRACTICAL IMPACT on ordinary people
+   - Paragraph 4: SOLUTIONS & HOPE (what's being done to fix it)
 
-4. **KEY INSIGHT**: Your professional perspective on what this means for farmers/industry
+4. **KEY INSIGHT**: Your perspective on why THIS MATTERS for society/individuals
 
-5. **CALL TO ACTION**: Thought-provoking question that encourages comments/discussion
+5. **CALL TO ACTION**: Question that encourages DISCUSSION, not just likes
+   Example: "What's your experience with AI fairness?" or "What ethical AI topic worries you most?"
 
 6. **FORMATTING**:
    - Short paragraphs (2-4 sentences max)
-   - For the Headline, Hook, Body, Keg Insight and Call to Action, at the beginning, add strategic relevant emojis 🚜🤖📊 (not decorative)
-   - Bold key phrases for skimmers
-   - Include whitespace between sections
+   - Use strategic emojis 🤖⚖️👁️🌍 (not decorative)
+   - **Bold** key phrases for skimmers
+   - Whitespace between sections for readability
 
-7. **HASHTAGS**: #9jaAI_Farmer + 2 most relevant hashtags from: #AgriTech #AIinAgriculture #PrecisionFarming #SustainableAgriculture #MachineLearning #DigitalAgriculture
+7. **HASHTAGS**: #ResponsibleAI + #AIEthics + 1-2 relevant: #AlgorithmicFairness #TechEthics #DigitalEthics #AITransparency
 
-TONE: Professional, insightful, forward-thinking and entertaining 
-LENGTH: 2,200-2,500 characters
-AUDIENCE: Agriculture professionals, tech investors, researchers, policymakers
-GOAL: Establish thought leadership + drive professional engagement
+TONE: Professional but ACCESSIBLE, explanatory (not academic), solution-focused
+LENGTH: 2,000-2,500 characters
+AUDIENCE: Mixed - tech professionals, concerned citizens, policymakers, students
+GOAL: Educate about AI ethics + spark meaningful discussion
 
 Write only the LinkedIn article text."""
 
-FACEBOOK_AGENT_INSTRUCTION = """You are a Facebook Agritech content creator. Read context.state['research_findings'] and create an engaging Facebook post.
+FACEBOOK_AGENT_INSTRUCTION = """You are creating Facebook posts about AI ETHICS for the GENERAL PUBLIC. Read context.state['research_findings'] and create an engaging, SIMPLE Facebook post.
 
+CRITICAL: Explain AI ethics concepts like you're talking to a NON-TECHNICAL FRIEND.
 
-FACEBOOK POST FOR SOCIAL AUDIENCE:
+FACEBOOK POST FOR PUBLIC AI ETHICS EDUCATION:
 
-CRITICAL: Read context.state['research_findings'] and explain it in SIMPLE, PLAIN ENGLISH.
-
-TARGET AUDIENCE: Friends, family, community members, average social media users (NOT professionals)
+TARGET AUDIENCE: Friends, family, average social media users (ZERO tech background required)
 
 POST REQUIREMENTS:
 
-1. **LENGTH**: 1000-1,200 characters (short & scannable)
+1. **LENGTH**: 900-1,200 characters (short & scannable)
 
 2. **TONE**: 
-   - Conversational like explaining to a friend
-   - Friendly, approachable, NOT technical
-   - Educational but simple
-   - Community-focused (we, our farmers, our community)
+   - Conversational, friendly, NOT intimidating
+   - Reassuring (AI ethics = solvable, not scary)
+   - Use analogies from everyday life
+   - NO jargon without simple explanation
 
 3. **STRUCTURE**:
-   [1] EYE-CATCHING OPENING: Start with engaging emoji + simple hook
-        Example: "🌱 Did you know...?" or "🚜 Farmers are using..."
+   [1] EYE-CATCHING OPENING: Start with question/relatable scenario
+        Example: "🤔 Have you noticed...?" or "👥 Did you know AI can be biased too?"
 
-   [2] SIMPLE EXPLANATION: Explain ONE key technology benefit in plain English
-        - Avoid jargon: say "smart farming" not "precision agriculture"
-        - Use analogies: "like a doctor for crops" or "like GPS for farming"
+   [2] SIMPLE EXPLANATION: Explain ONE ethics concept in plain English
+        - Use analogies: "AI bias is like a teacher who only calls on certain students"
+        - Avoid ALL technical terms
 
-   [3] WHY IT MATTERS: Connect to everyday life
-        - How it affects food prices/availability
-        - How it helps local farmers
-        - Environmental benefits (less chemicals, water saved)
+   [3] WHY IT MATTERS TO YOU: Connect to daily life
+        - How this affects jobs, loans, healthcare, social media
+        - Real consequences for ordinary people
 
-   [4] ENGAGEMENT QUESTION: Ask something ANYONE can answer
-        Example: "What farming tech surprises you most?"
-                "Tag a farmer friend who should see this!"
-                "Have you seen drones helping farms?"
+   [4] EMPOWERMENT MESSAGE: What people CAN DO
+        - Simple ways to be aware
+        - Questions to ask companies/organizations
 
-   [5] CALL-TO-ACTION: "Read more [🔗 LINK TO ARTICLE]"
+   [5] ENGAGEMENT QUESTION: Ask something ANYONE can answer
+        Example: "Has technology ever seemed unfair to you?"
+                "Tag someone who should think about AI ethics!"
+                "What worries you most about smart technology?"
 
-   [6] IMAGE SUGGESTION: "📸 Use image of [simple, relatable suggestion]"
-        Examples: "drone over farm", "farmer with tablet", "healthy crops"
+   [6] CALL-TO-ACTION: "Learn more [🔗 LINK TO ARTICLE]"
+
+   [7] IMAGE SUGGESTION: "📸 Use image of [relatable, non-technical suggestion]"
+        Examples: "people looking confused at phone", "diverse group discussing", "scale balancing"
 
 4. **FORMATTING**:
-   - Short paragraphs (1-3 sentences max)
-   - Use friendly emojis 🌱🚜🤖 (3-5 total)
-   - Simple line breaks for readability
-   - NO technical terms without explanation
+   - Very short paragraphs (1-2 sentences max)
+   - Friendly emojis 🤔👥⚖️🤖 (3-4 total)
+   - Simple line breaks for mobile reading
+   - ABSOLUTELY NO technical jargon
 
-5. **HASHTAGS**: 2-3 simple hashtags like:
-   #FarmingTech #SmartFarming #FutureOfFarming #FarmLife
+5. **HASHTAGS**: 2-3 simple hashtags:
+   #AIForEveryone #TechFairness #EthicalAI #SmartTech
 
-GOAL: Make complex agri-tech understandable to ANYONE while driving likes, shares, and comments.
+GOAL: Make AI ethics UNDERSTANDABLE and RELEVANT to everyone while encouraging discussion.
 
 Write only the Facebook post text."""
 
-WHATSAPP_AGENT_INSTRUCTION = """You are creating WhatsApp Status updates (24-hour stories). Read context.state['research_findings'] and create FOUR separate WhatsApp Status posts.
+WHATSAPP_AGENT_INSTRUCTION = """You are creating WhatsApp Status updates about AI ETHICS for friends/family. Read context.state['research_findings'] and create FOUR separate WhatsApp Status posts.
 
-CRITICAL: Only use information from context.state['research_findings'].
+CRITICAL: Explain AI ethics in SUPER SIMPLE, NON-TECHNICAL language.
 
-WHATSAPP STATUS REQUIREMENTS:
+WHATSAPP STATUS REQUIREMENTS FOR AI ETHICS EDUCATION:
 
 GENERAL FORMAT:
 - Create 4 SEPARATE status posts (Post 1, Post 2, Post 3, Post 4)
-- Each post should be INDEPENDENT and can stand alone
-- Use clear separators between posts
+- Each post should be INDEPENDENT and understandable alone
+- Use ULTRA-SIMPLE language (like texting a friend)
 
-POST 1-3 REQUIREMENTS (INDIVIDUAL FACTS):
-- **Length**: 250-300 characters each (very short!)
-- **Content**: ONE key statistic/fact from research + brief explanation
-- **Tone**: Excited, personal, like sharing cool news with friends
-- **Start with**: Can use "Did you know?", "🌟", "🚜", etc.
+POST 1-3 REQUIREMENTS (INDIVIDUAL CONCEPTS):
+- **Length**: 200-280 characters each (very short!)
+- **Content**: ONE ethics concept explained simply + real-life example
+- **Tone**: Conversational, curious, not alarming
+- **Start with**: "Did you know?", "🤔", "⚖️", "👥"
 - **Emojis**: 1-2 relevant emojis per post
-- **Focus**: Each post highlights DIFFERENT aspect of the research
+- **Focus**: Different aspect of AI ethics each post
 
-POST 4 REQUIREMENTS (SUMMARY + LINK):
+POST 4 REQUIREMENTS (SUMMARY + ACTION):
 - **Length**: 80-120 characters
-- **Content**: Overall summary + call-to-action
+- **Content**: Positive takeaway + invitation to learn more
 - **Must include**: [LINK_TO_LINKEDIN] placeholder
-- **Tone**: Conclusive, inviting
-- **Goal**: Drive traffic to main content
+- **Tone**: Hopeful, inviting, actionable
+- **Goal**: Encourage learning without overwhelming
 
 OUTPUT FORMAT:
 Return EXACTLY this format:
 
 📱 WHATSAPP STATUS 1:
-[Your first status post here]
+[Simple explanation of AI ethics concept 1]
 
 
 📱 WHATSAPP STATUS 2:
-[Your second status post here]
+[Simple explanation of AI ethics concept 2]
 
 
 📱 WHATSAPP STATUS 3:
-[Your third status post here]
+[Simple explanation of AI ethics concept 3]
 
-📱 WHATSAPP STATUS 4 (SUMMARY + LINK):
-[Your summary post with [LINK_TO_LINKEDIN] here]
 
-AUDIENCE: Friends, family, close network (non-technical)
-GOAL: Share interesting agri-tech facts across multiple status updates, then drive to main content
+📱 WHATSAPP STATUS 4 (LEARN MORE):
+[Positive message + [LINK_TO_LINKEDIN]]
+
+AUDIENCE: Friends, family, contacts (mixed tech/non-tech)
+GOAL: Gently educate about AI ethics across multiple status updates
 
 Write ONLY the 4 WhatsApp Status posts in the exact format above."""
 
 # Footer HTML
 FOOTER_HTML = """
 <div style='text-align: center; color: #666; font-size: 0.9rem; padding: 2rem 0;'>
-<p>🌱 <strong>Agri-Tech Multi-Platform Content Creator</strong></p>
-<p>Powered by Google ADK • Gemini AI • Groq/Llama • One Research → Three Platforms</p>
-<p>⚠️ Professional & educational use • Always verify information before publishing</p>
+<p>🤖 <strong>Responsible AI Multi-Platform Educator</strong></p>
+<p>Powered by Google ADK • Gemini AI • Groq/Llama • AI Ethics Education for Everyone</p>
+<p>⚠️ Educational content • AI ethics affects us all • Stay informed, ask questions</p>
 <p>🔒 API keys are session-only • Not stored on any server</p>
 </div>
 """
