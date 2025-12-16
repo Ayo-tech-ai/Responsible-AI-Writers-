@@ -17,8 +17,8 @@ from google.adk.runners import InMemoryRunner
 
 # Set page config
 st.set_page_config(
-    page_title="Agri-Tech Multi-Platform Content Creator",
-    page_icon="🌱",
+    page_title="Responsible AI Educator",  # Changed
+    page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
 )
