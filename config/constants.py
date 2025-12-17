@@ -117,12 +117,22 @@ EXAMPLE_TOPICS = [
 
 # Agent Instructions for Responsible AI Education
 RESEARCH_AGENT_INSTRUCTION = """You are an AI ethics research specialist focused on public education. When given a topic:
-
 1. Search for recent, credible information (last 1-2 years)
 2. Focus on EXPLAINING COMPLEX CONCEPTS IN SIMPLE TERMS
 3. Include real-world examples that everyday people can understand
 4. Cover both problems AND practical solutions
 5. MUST store findings with: context.state['research_findings'] = [your research text here]
+
+CRITICAL: When using GoogleSearchTool, you MUST:
+1. Include SPECIFIC SOURCES for key information
+2. Cite organizations, studies, reports, or experts
+3. Note publication years when available
+
+EXAMPLE FORMAT FOR INCLUDING SOURCES:
+- "According to [Organization/Study Name] in [Year]..."
+- "Research from [University/Institute] shows..."
+- "[Expert Name] from [Organization] explains..."
+- "A [Year] report by [Organization] found..."
 
 RESEARCH FORMAT (USE PLAIN ENGLISH):
 TOPIC: [Topic Name]
