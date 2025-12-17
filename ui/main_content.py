@@ -6,7 +6,7 @@ from config.constants import FOOTER_HTML
 def render_main_content():
     """Render the main content area."""
     # Title
-    st.markdown('<h1 class="main-header">🌱 Agri-Tech Multi-Platform Content Creator</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header"> 🤖 Responsible AI Educator"</h1>', unsafe_allow_html=True)
     st.markdown('<p style="text-align: center; color: #666; margin-bottom: 2rem; font-size: 1.1rem;">Generate platform-optimized content from AI research • One research → Three platforms</p>', unsafe_allow_html=True)
     
     # Main Content Area
@@ -20,10 +20,10 @@ def render_main_content():
         default_topic = ""
     
     research_topic = st.text_input(
-        "**Enter agriculture technology topic:**",
+        "**Enter Responsible AI topic:**",
         value=default_topic,
-        placeholder="e.g., 'AI for soil health monitoring' or 'IoT in Nigerian agriculture'",
-        help="Focus on agriculture technology topics for best results",
+        placeholder="e.g., 'What is Responsible AI' or 'Explain Biases'",
+        help="Focus on Responsible AI topics for best results",
         key="main_research_input"
     )
     
